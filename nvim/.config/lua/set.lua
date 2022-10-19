@@ -1,4 +1,4 @@
-local exec = vim.api.nvim_exe
+local exec = vim.api.nvim_exec
 local set = vim.opt
 local cmd = vim.cmd
 
