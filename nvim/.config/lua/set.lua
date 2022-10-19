@@ -32,8 +32,7 @@ set.mouse = "a"
 set.shell = "zsh"
 
 -- highlight on yank
-exec(
-  [[
+exec([[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500, on_visual=true}
@@ -45,9 +44,9 @@ exec(
 -- auto source nvim
 cmd([[
 	augroup neovim
-			autocmd!
-			autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
-		augroup end
+		autocmd!
+		autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
+	augroup end
 ]])
 
 -- 2 spaces for selected filetypes
