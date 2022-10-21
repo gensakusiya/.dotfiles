@@ -4,6 +4,15 @@ local cmd = vim.cmd
 
 local g = vim.g
 
+require("tokyonight").setup(
+	{
+		transparent = false 
+	}
+)
+cmd("autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=grey")
+cmd("colorscheme tokyonight")
+set.guifont = "DroidSansMono Nerd Font 11"
+
 set.termguicolors = true
 
 set.undofile = true
@@ -32,7 +41,8 @@ set.mouse = "a"
 set.shell = "zsh"
 
 -- highlight on yank
-exec([[
+exec(
+  [[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500, on_visual=true}
