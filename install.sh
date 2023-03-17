@@ -22,6 +22,14 @@ brew install nvm
 echo "Installing neovim..."
 brew install neovim
 
+# ---------------------------------
+# Colors and formatting
+# ---------------------------------
+b="$(tput bold)"
+d='\033[2m' 
+y='\033[33;33m'
+n='\033[0m'
+
 echo -e "\n\ninstalling to ~/.config"
 echo "=============================="
 if [ ! -d $HOME/.config ]; then
@@ -31,12 +39,8 @@ fi
 
 for config in ./config/*; do
     echo $config
-    #target=$HOME/.config/$( basename $config )
-    #if [ -e $target ]; then
-    #    echo "~${target#$HOME} already exists... Skipping."
-    #else
-    #    echo "Creating symlink for $config"
-    #    ln -s $config $target
-    #fi
+    target=$HOME/.config/$( basename $config )
+    echo -e "Creating symlink for ${d} $config ${n}"
+    ln -sf $config $target
 done
 
