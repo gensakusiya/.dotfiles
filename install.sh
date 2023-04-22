@@ -16,6 +16,8 @@ brew install zsh
 brew install markdown
 brew install zsh-syntax-highlighting
 brew install zsh-autosuggestions
+brew install starship
+
 
 brew install nvm
 
