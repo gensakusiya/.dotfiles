@@ -18,11 +18,14 @@ brew install zsh-syntax-highlighting
 brew install zsh-autosuggestions
 brew install starship
 
+brew install ripgrep
 
 brew install nvm
 
 echo "Installing neovim..."
 brew install neovim
+
+brew install fsouza/prettierd/prettierd
 
 # ---------------------------------
 # Colors and formatting
@@ -43,6 +46,7 @@ for config in ./config/*; do
     echo $config
     target=$HOME/.config/$( basename $config )
     echo -e "Creating symlink for ${d} $config ${n}"
-    ln -sf $config $target
+    rm -rf $HOME/.config/$config
+    ln -sr $config $target
 done
 
