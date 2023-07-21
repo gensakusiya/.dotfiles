@@ -75,4 +75,13 @@ return require('packer').startup(function(use)
     use 'MunifTanjim/prettier.nvim'
 
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+
+    -- line UI
+    use 'nvim-tree/nvim-web-devicons'
+    use {
+        'nvim-lualine/lualine.nvim',
+    }
+
+    -- file tree
+    use 'prichrd/netrw.nvim'
 end)
