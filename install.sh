@@ -26,6 +26,8 @@ echo "Installing neovim..."
 brew install neovim
 
 brew install fsouza/prettierd/prettierd
+brew tap homebrew/cask-fonts
+brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
 
 # ---------------------------------
 # Colors and formatting
