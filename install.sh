@@ -7,7 +7,7 @@ fi
 
 echo "Installing homebrew packages..."
 
-# development tools
+development tools
 brew install git
 brew install iterm2 --cask
 
@@ -19,6 +19,8 @@ brew install zsh-autosuggestions
 brew install starship
 
 brew install ripgrep
+
+brew install stow
 
 brew install nvm
 
@@ -44,11 +46,13 @@ if [ ! -d $HOME/.config ]; then
     mkdir -p $HOME/.config
 fi
 
-for config in ./config/*; do
-    echo $config
-    target=$HOME/.config/$( basename $config )
-    echo -e "Creating symlink for ${d} $config ${n}"
-    rm -rf $HOME/.config/$config
-    ln -sr $config $target
-done
+stow --target ~/.config config
+
+# for config in ./config/*; do
+#    echo "Checking: $config"
+#    target=$HOME/.config/$config
+#    echo -e "Creating symlink for ${d} $config ${n}"
+#    rm -rf $HOME/.config/$config
+#    ln -sr $config $target
+# done
 
